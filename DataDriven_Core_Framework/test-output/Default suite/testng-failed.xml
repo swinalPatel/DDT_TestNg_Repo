@@ -5,6 +5,7 @@
     <classes>
       <class name="com.core.ddf.testcases.LoginTest">
         <methods>
+          <include name="quit"/>
           <include name="loginTest"/>
         </methods>
       </class> <!-- com.core.ddf.testcases.LoginTest -->

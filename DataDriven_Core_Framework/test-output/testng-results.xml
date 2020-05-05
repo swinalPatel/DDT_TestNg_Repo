@@ -1,85 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16681" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:57:03 BST">
+  <suite name="Default suite" duration-ms="37244" started-at="2020-05-05T15:32:42 BST" finished-at="2020-05-05T15:33:19 BST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="16681" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:57:03 BST">
-      <class name="com.core.ddf.testcases.AddDelStockTest">
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.AddDelStockTest@58134517]" name="quit" is-config="true" duration-ms="16" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="AddStockTest()[pri:1, instance:com.core.ddf.testcases.AddDelStockTest@58134517]" name="AddStockTest" duration-ms="0" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddStockTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.AddDelStockTest@58134517]" name="quit" is-config="true" duration-ms="15" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="DeleteStockTest()[pri:2, instance:com.core.ddf.testcases.AddDelStockTest@58134517]" name="DeleteStockTest" duration-ms="0" started-at="2020-05-04T12:56:46 BST" depends-on-methods="com.core.ddf.testcases.AddDelStockTest.AddStockTest" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteStockTest -->
-      </class> <!-- com.core.ddf.testcases.AddDelStockTest -->
-      <class name="com.core.ddf.testcases.BuyOrSellStockTest">
-        <test-method status="PASS" signature="BuyStockTest()[pri:1, instance:com.core.ddf.testcases.BuyOrSellStockTest@4450d156]" name="BuyStockTest" duration-ms="0" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BuyStockTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.BuyOrSellStockTest@4450d156]" name="quit" is-config="true" duration-ms="0" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="SellStockTest()[pri:2, instance:com.core.ddf.testcases.BuyOrSellStockTest@4450d156]" name="SellStockTest" duration-ms="16" started-at="2020-05-04T12:56:46 BST" depends-on-methods="com.core.ddf.testcases.BuyOrSellStockTest.BuyStockTest" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SellStockTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.BuyOrSellStockTest@4450d156]" name="quit" is-config="true" duration-ms="0" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-      </class> <!-- com.core.ddf.testcases.BuyOrSellStockTest -->
-      <class name="com.core.ddf.testcases.PortFolioTest">
-        <test-method status="PASS" signature="CreatePortfolioTest()[pri:1, instance:com.core.ddf.testcases.PortFolioTest@279ad2e3]" name="CreatePortfolioTest" duration-ms="15" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreatePortfolioTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.PortFolioTest@279ad2e3]" name="quit" is-config="true" duration-ms="295" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.PortFolioTest@279ad2e3]" name="quit" is-config="true" duration-ms="15" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="DeletePortfolioTest()[pri:2, instance:com.core.ddf.testcases.PortFolioTest@279ad2e3]" name="DeletePortfolioTest" duration-ms="0" started-at="2020-05-04T12:56:46 BST" depends-on-methods="com.core.ddf.testcases.PortFolioTest.CreatePortfolioTest" finished-at="2020-05-04T12:56:46 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeletePortfolioTest -->
-      </class> <!-- com.core.ddf.testcases.PortFolioTest -->
-      <class name="com.core.ddf.testcases.CheckTransactionHistoryTest">
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.CheckTransactionHistoryTest@351d0846]" name="quit" is-config="true" duration-ms="9" started-at="2020-05-04T12:57:03 BST" finished-at="2020-05-04T12:57:03 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method status="PASS" signature="checkTransactionHistoryTest()[pri:3, instance:com.core.ddf.testcases.CheckTransactionHistoryTest@351d0846]" name="checkTransactionHistoryTest" duration-ms="0" started-at="2020-05-04T12:57:03 BST" finished-at="2020-05-04T12:57:03 BST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkTransactionHistoryTest -->
-      </class> <!-- com.core.ddf.testcases.CheckTransactionHistoryTest -->
+    <test name="Default test" duration-ms="37244" started-at="2020-05-05T15:32:42 BST" finished-at="2020-05-05T15:33:19 BST">
       <class name="com.core.ddf.testcases.LoginTest">
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.core.ddf.testcases.LoginTest@4461c7e3]" name="loginTest" duration-ms="16253" started-at="2020-05-04T12:56:46 BST" finished-at="2020-05-04T12:57:03 BST">
+        <test-method status="FAIL" signature="loginTest()[pri:0, instance:com.core.ddf.testcases.LoginTest@429bd883]" name="loginTest" duration-ms="36618" started-at="2020-05-05T15:32:42 BST" finished-at="2020-05-05T15:33:19 BST">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Email field not present]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Email field not present
+at org.testng.Assert.fail(Assert.java:97)
+at com.core.ddf.base.BaseTest.reportFailure(BaseTest.java:160)
+at com.core.ddf.testcases.LoginTest.loginTest(LoginTest.java:36)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.LoginTest@4461c7e3]" name="quit" is-config="true" duration-ms="28" started-at="2020-05-04T12:57:03 BST" finished-at="2020-05-04T12:57:03 BST">
+        <test-method status="PASS" signature="quit()[pri:0, instance:com.core.ddf.testcases.LoginTest@429bd883]" name="quit" is-config="true" duration-ms="590" started-at="2020-05-05T15:33:19 BST" finished-at="2020-05-05T15:33:19 BST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- com.core.ddf.testcases.LoginTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

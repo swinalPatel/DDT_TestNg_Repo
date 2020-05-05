@@ -2,10 +2,10 @@ package com.core.ddf.base;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -20,18 +20,20 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.core.ddf.util.ExtentManager;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
+
 
 
 
 public class BaseTest {
 	public Properties CONFIG;
 	public WebDriver driver;
-	public ExtentReports rep = ExtentManager.getReport();     // initiating new object (rep) of ExtentReports class by given function (geInstance) of ExtentManager class
-	public ExtentTest test;            // creating test object of ExtentTest class 
+	public static ExtentReports rep = ExtentManager.getReport(System.getProperty("user.dir") + "//report//");     // initiating new object (rep) of ExtentReports class by given function (geInstance) of ExtentManager class
+	public static ExtentTest test;            // creating test object of ExtentTest class 
+	
 	
 	
 	// (1) (Function for opening the browser and initialised the properties file)
@@ -41,7 +43,7 @@ public class BaseTest {
 		if(CONFIG==null) {
 			CONFIG = new Properties();
 			try {
-				FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "//scr//test//resources//CONFIG.properties");
+				FileInputStream fs = new FileInputStream(System.getProperty("user.dir") + "//src//test//resources//CONFIG.properties");
 				CONFIG.load(fs);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -114,25 +116,48 @@ public class BaseTest {
 		
 	}
 	
-	public boolean isElementPresent() {
-		return false;
+	public boolean isElementPresent(String locatorKey) throws IOException {
+		List<WebElement> elementList = null;
+		if(locatorKey.endsWith("_xpath"))
+			elementList = driver.findElements(By.xpath(CONFIG.getProperty(locatorKey)));
+		else if(locatorKey.endsWith("_id"))
+			elementList = driver.findElements(By.id(CONFIG.getProperty(locatorKey)));
+		else if(locatorKey.endsWith("_name"))
+			elementList = driver.findElements(By.name(CONFIG.getProperty(locatorKey)));
+		else {
+			reportFailure("Locator not correct: " + locatorKey);
+			Assert.fail("Locator not correct: " + locatorKey);
+		}
+		
+		if(elementList.size()==0)
+		     return false;
+		else
+			return true;
 	}
 
-	public boolean verifyText() {
-		return false;
-	}
+	public boolean verifyText(String locatorKey, String exp_text) throws IOException {
+		
+			String actual_text = getElement(locatorKey).getText();
+			String expected_text = CONFIG.getProperty(exp_text);
+			System.out.println(actual_text);
+			System.out.println(expected_text);
+		if(actual_text.equals(expected_text))
+			return true;
+		else 
+			return false;
+		}
 	
 	//*****************Reporting functions************//
 	
 	public void reportPass(String msg) {
-		test.log(LogStatus.PASS, msg);
+		test.log(Status.PASS, msg);
 		
 	}
 	
 	public void reportFailure(String msg) throws IOException {
-		test.log(LogStatus.FAIL, msg);
+		test.log(Status.FAIL, msg);
 		takeScreenShot();
-		Assert.fail();
+		Assert.fail(msg);
 		}
 	
 	// store screenshots in jpeg file
@@ -146,8 +171,9 @@ public class BaseTest {
 			File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
 			try {
 			// Move image file to new destination
-			File DestFile=new File(System.getProperty("user.dir") + "\\screenshots\\" + filename()+".jpeg");
-			
+			File DestFile=new File(ExtentManager.screenshotpath + filename()+".jpeg");
+				
+				
 			// Copy file at destination
 			FileHandler.copy(SrcFile, DestFile);
 			} catch (IOException e) {
@@ -155,7 +181,7 @@ public class BaseTest {
 			}
 			
 			// put screenshot file in the report
-			test.log(LogStatus.INFO, "screenshot--->" + test.addScreenCapture(System.getProperty("user.dir") + "\\screenshots\\" + filename()+".jpeg"));
+			test.log(Status.INFO, "screenshot--->" + test.addScreenCaptureFromPath(ExtentManager.screenshotpath  + filename()+".jpeg"));
 			}
 		
 		public static String filename() {
