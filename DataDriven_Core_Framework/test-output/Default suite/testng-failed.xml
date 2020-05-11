@@ -6,7 +6,8 @@
       <class name="com.core.ddf.testcases.LoginTest">
         <methods>
           <include name="quit"/>
-          <include name="loginTest"/>
+          <include name="start"/>
+          <include name="loginTest" invocation-numbers="0 1 2 4"/>
         </methods>
       </class> <!-- com.core.ddf.testcases.LoginTest -->
     </classes>
